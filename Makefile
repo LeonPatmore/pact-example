@@ -10,3 +10,8 @@ publish:
 
 can-i-deploy:
 	docker run --network pact-example_pact --rm pactfoundation/pact-cli:latest  pact-broker can-i-deploy --broker-base-url http://pact-broker:9292 --pacticipant chatappInboundHandler --latest
+
+stop:
+	docker-compose stop
+	docker-compose rm  -f -v
+	docker volume rm pact-example_postgres-volume
