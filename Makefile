@@ -16,3 +16,8 @@ can-i-deploy:
 deploy-eks:
 	helm repo add pact-broker https://pact-foundation.github.io/pact-broker-chart/
 	helm upgrade --install pact-broker pact-broker/pact-broker --set ingress.className=ingress-controller-internal-nginx --set ingress.host=olympus-pact.main0.api.olym.dev.euw1.vonagenetworks.net --set broker.config.webhookSchemeWhitelist=http
+
+stop:
+	docker-compose stop
+	docker-compose rm  -f -v
+	docker volume rm pact-example_postgres-volume
