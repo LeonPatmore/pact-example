@@ -1,0 +1,12 @@
+{
+    "events": [{
+        "name": "contract_requiring_verification_published"
+    }],
+    "request": {
+        "method": "POST",
+        "url": "http://jenkins-olympus01.eu-west-2.dev.nexmo.xxx:8080/job/CI/job/TriggerContract/buildWithParameters?SERVICE=${pactbroker.providerName}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
